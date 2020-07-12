@@ -1,18 +1,41 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main-box">
+    <!-- 操作菜单栏 -->
+    <div>
+      <MenuBar></MenuBar>
+    </div>
+    <!-- 好友列表 -->
+    <div>
+      <PlayerList></PlayerList>
+    </div>
+    <!-- 聊天室 -->
+    <div class="room">
+      <ChatRoom></ChatRoom>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import MenuBar from "@/components/MenuBar";
+import PlayerList from "@/components/PlayerList";
+import ChatRoom from "@/components/ChatRoom";
 
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
-  }
-}
+    MenuBar,
+    PlayerList,
+    ChatRoom
+  },
+  name: "Home"
+};
 </script>
+
+<style lang="less" scoped>
+.main-box{
+  display: flex;
+}
+
+.room{
+  flex: 1;
+}
+</style>
